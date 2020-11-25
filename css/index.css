@@ -1,0 +1,61 @@
+@import 'style.css';
+@import 'headerAndFooter.css';
+
+.bodyContainer{
+	padding-top: 85px;
+	padding-left: 10%;
+	padding-right: 10%;
+	padding-bottom: 80px;
+	width: 100%;
+}
+
+.gallery{
+	background: #EEE;
+}
+
+.gallery-cell{
+	width: 66%;
+	height: calc(100vh - 95px);
+	margin-right: 200px;
+	background: #8C8;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.gallery-cell:nth-child(1){
+	background-image: url("../images/pics/pic1.jpg");
+}
+
+.gallery-cell:nth-child(2){
+	background-image: url("../images/pics/pic2.jpg");
+}
+
+.gallery-cell:nth-child(3){
+	background-image: url("../images/pics/pic3.jpg");
+}
+
+.gallery-cell:nth-child(4){
+	background-image: url("../images/pics/pic4.jpg");
+}
+
+.gallery-cell:nth-child(5){
+	background-image: url("../images/pics/pic5.jpg");
+}
+
+.gallery-cell:nth-child(6){
+	background-image: url("../images/pics/pic6.jpg");
+}
+
+.gallery-cell:nth-child(7){
+	background-image: url("../images/pics/pic7.jpg");
+}
+
+.embedd-image{
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.embedd-image:nth-child(1){
+	height: 300px;
+	background-image: url("../images/pics/pic8.jpg");
+}
