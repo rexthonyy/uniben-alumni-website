@@ -5,3 +5,18 @@
 	padding: 85px 10%;
 	width: 100%;
 }
+
+.exectiveTable tr td{
+	padding: 0px 16px 64px 16px;
+	width: 25%;
+}
+
+.embedd-image{
+	background-image: url("../images/pics/pic8.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#embeddedImage1{
+	background-image: url("../images/pics/pic8.jpg");
+}
