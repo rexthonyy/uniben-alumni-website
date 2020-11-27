@@ -10,7 +10,7 @@
 }
 
 .gallery{
-	background: #EEE;
+	/*background: #EEE;*/
 }
 
 .gallery-cell{
@@ -55,7 +55,22 @@
 	background-size: cover;
 }
 
-.embedd-image:nth-child(1){
-	height: 300px;
+#embeddedImage1{
 	background-image: url("../images/pics/pic8.jpg");
 }
+
+#embeddedImage2{
+	height: 300px;
+	background-image: url("../images/pics/pic7.jpg");
+}
+
+#embeddedImage3{
+	height: 300px;
+	background-image: url("../images/pics/pic6.jpg");
+}
+
+#embeddedImage4{
+	height: 300px;
+	background-image: url("../images/pics/pic5.jpg");
+}
+

@@ -6,3 +6,17 @@ nav{
 	background-color: white;
 	z-index: 1;
 }
+
+#table-contactus{
+	margin-top: 0;
+	border-spacing: 0 4px;
+}
+
+#table-contactus tr td img{
+	vertical-align: middle;
+}
+
+#table-contactus tr td p{
+	vertical-align: top;
+}
+
