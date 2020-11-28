@@ -4,9 +4,10 @@
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	    <meta name="description" content="University of Benin Alumni Association">
-		<title>National Executives of UNIBEN Alumni Association</title>
-		<link type="text/css" rel="stylesheet" href="css/nationalExcos.css"/>
+		<title>Members Directory - UNIBEN Alumni Association</title>
+		<link type="text/css" rel="stylesheet" href="css/history.css"/>
 		<link type="image/x-icon" rel="icon" href="images/icons/website_icon.png">
+		<script type="text/javascript" src="js/membersDirectory.js"></script>
 	</head>
 
 	<body>
@@ -59,96 +60,16 @@
 			</nav>
 			<div class="pt-85px">
 				<header class="relative grayBackgroundColor height-170px">
-					<div class="center-div-relative-both fs-large bold centerText">
-						<h1>National Executives of UNIBEN Alumni Association</h1>
+					<div class="center-div-relative-both fs-large bold">
+						<h1>Members' Directory</h1>
 					</div>
 				</header>
 			</div>
 			<section class="bodyContainer">
-				<table class="centerText exectiveTable">
-					<tr>
-						<td>
-							<div class="width-100-pp height-200px mb-16px border embedd-image"></div>
-							<div class="fs-normal bold">John Doe</div>
-							<div class="fs-normal">State : Delta State</div>
-							<div class="fs-normal">(2020)</div>
-						</td>
-						<td>
-							<div class="width-100-pp height-200px mb-16px border embedd-image"></div>
-							<div class="fs-normal bold">John Doe</div>
-							<div class="fs-normal">State : Delta State</div>
-							<div class="fs-normal">(2020)</div>
-						</td>
-						<td>
-							<div class="width-100-pp height-200px mb-16px border embedd-image"></div>
-							<div class="fs-normal bold">John Doe</div>
-							<div class="fs-normal">State : Delta State</div>
-							<div class="fs-normal">(2020)</div>
-						</td>
-						<td>
-							<div class="width-100-pp height-200px mb-16px border embedd-image"></div>
-							<div class="fs-normal bold">John Doe</div>
-							<div class="fs-normal">State : Delta State</div>
-							<div class="fs-normal">(2020)</div>
-						</td>
-						
-					</tr>
-					<tr>
-						<td>
-							<div class="width-100-pp height-200px mb-16px border embedd-image"></div>
-							<div class="fs-normal bold">John Doe</div>
-							<div class="fs-normal">State : Delta State</div>
-							<div class="fs-normal">(2020)</div>
-						</td>
-						<td>
-							<div class="width-100-pp height-200px mb-16px border embedd-image"></div>
-							<div class="fs-normal bold">John Doe</div>
-							<div class="fs-normal">State : Delta State</div>
-							<div class="fs-normal">(2020)</div>
-						</td>
-						<td>
-							<div class="width-100-pp height-200px mb-16px border embedd-image"></div>
-							<div class="fs-normal bold">John Doe</div>
-							<div class="fs-normal">State : Delta State</div>
-							<div class="fs-normal">(2020)</div>
-						</td>
-						<td>
-							<div class="width-100-pp height-200px mb-16px border embedd-image"></div>
-							<div class="fs-normal bold">John Doe</div>
-							<div class="fs-normal">State : Delta State</div>
-							<div class="fs-normal">(2020)</div>
-						</td>
-						
-					</tr>
-					<tr>
-						<td>
-							<div class="width-100-pp height-200px mb-16px border embedd-image"></div>
-							<div class="fs-normal bold">John Doe</div>
-							<div class="fs-normal">State : Delta State</div>
-							<div class="fs-normal">(2020)</div>
-						</td>
-						<td>
-							<div class="width-100-pp height-200px mb-16px border embedd-image"></div>
-							<div class="fs-normal bold">John Doe</div>
-							<div class="fs-normal">State : Delta State</div>
-							<div class="fs-normal">(2020)</div>
-						</td>
-						<td>
-							<div class="width-100-pp height-200px mb-16px border embedd-image"></div>
-							<div class="fs-normal bold">John Doe</div>
-							<div class="fs-normal">State : Delta State</div>
-							<div class="fs-normal">(2020)</div>
-						</td>
-						<td>
-							<div class="width-100-pp height-200px mb-16px border embedd-image"></div>
-							<div class="fs-normal bold">John Doe</div>
-							<div class="fs-normal">State : Delta State</div>
-							<div class="fs-normal">(2020)</div>
-						</td>
-						
-					</tr>
-
-				</table>
+				<input type="text" id="searchInput" class="pt-8px pb-8px pl-16px pr-16px fs-normal mb-32px width-100-pp mb-32px" placeholder="Search for member"/>
+				<div class="overflow-v">
+					<ol id="membersList" class="ol-default fs-normal"></ol>
+				</div>
 			</section>
 			<footer class="width-100-pp footerBackgroundColor grayColor fs-normal">
 				<div class="pad64px">
