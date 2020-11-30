@@ -113,6 +113,22 @@ h1{
 	width: 100px;
 }
 
+.width-200px{
+	width: 200px;
+}
+
+.width-300px{
+	width: 300px;
+}
+
+.width-400px{
+	width: 400px;
+}
+
+.width-500px{
+	width: 500px;
+}
+
 .height-10px{
 	height: 10px;
 }
@@ -163,6 +179,10 @@ h1{
 
 .height-300px{
 	height: 300px;
+}
+
+.height-400px{
+	height: 400px;
 }
 
 .height-500px{
@@ -242,6 +262,14 @@ table{
 
 .dropdown:hover .dropdown-content {
 	display: block;
+}
+
+.margin-16px{
+	margin: 16px;
+}
+
+.mt-8px{
+	margin-top: 8px;
 }
 
 .mt-64px{
@@ -435,6 +463,10 @@ table{
 	transform: translate(-50%, -50%);
 }
 
+.centerDivHorizontally{
+	margin: 0 auto;
+}
+
 .ol-default { 
     display: block;
     margin: 1em 0;
@@ -444,6 +476,21 @@ table{
     list-style-type: decimal;
     margin-bottom: 16px;
 }
+
+.div-radii-8px{
+	border-radius: 8px;
+}
+
+.buttonPrimary{
+	background-color: rgb(80, 55, 55);
+	color: white;
+}
+
+.buttonPrimary:hover{
+	cursor: pointer;
+	background-color: rgb(60, 35, 35);
+}
+
 @media (max-width: 700px){
 	#desktop, #mobile{
 		display: none;

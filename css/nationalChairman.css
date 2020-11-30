@@ -1,0 +1,13 @@
+@import 'style.css';
+@import 'headerAndFooter.css';
+@import 'history.css';
+
+.embedd-image{
+	background-image: url("../images/pics/pic8.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#embeddedImage1{
+	background-image: url("../images/pics/pic8.jpg");
+}
