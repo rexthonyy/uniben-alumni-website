@@ -476,6 +476,13 @@ table{
     list-style-type: decimal;
     margin-bottom: 16px;
 }
+.ol-style-lower-roman li {
+	list-style-type: lower-roman;
+}
+
+.ol-style-none li {
+	list-style-type: none;
+}
 
 .div-radii-8px{
 	border-radius: 8px;
