@@ -1,0 +1,21 @@
+@import 'style.css';
+@import 'headerAndFooter.css';
+
+.bodyContainer{
+	padding: 85px 10%;
+	width: 100%;
+}
+
+.galleryTable tr td{
+	width: 25%;
+}
+
+.embedd-image{
+	background-image: url("../images/pics/pic8.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#embeddedImage1{
+	background-image: url("../images/pics/pic8.jpg");
+}
