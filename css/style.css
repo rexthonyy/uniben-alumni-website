@@ -189,6 +189,9 @@ h1{
 	height: 500px;
 }
 
+.height-100pp{
+	height: 100%;
+}
 table{
 	width: 100%;
 	/*border: 1px solid black;*/
@@ -215,8 +218,20 @@ table{
 	vertical-align: middle;
 }
 
+.table-cellspacing-normal{
+	border-spacing: 8px 8px;
+}
+
 .border{
 	border: 1px solid black;
+}
+
+.no-border{
+	border: 0;
+}
+
+.border-radii-8px{
+	border-radius: 8px;
 }
 
 .navContainer a{
