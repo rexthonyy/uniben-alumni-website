@@ -1,9 +1,61 @@
+function getUserId(){
+	return document.getElementById("userId");
+}
+
 function getUserImage(){
 	return document.getElementById("userImage");
 }
 
-function getUserName(){
-	return document.getElementById("username");
+function getUploadFile(){
+	return document.getElementById("uploadFile");
+}
+
+function getUploadForm(){
+	return document.getElementById("uploadForm");
+}
+
+function getVerificationStatus(){
+	return document.getElementById("verificationStatus");
+}
+
+function getTitle(){
+	return document.getElementById("title");
+}
+
+function getFirstName(){
+	return document.getElementById("firstName");
+}
+
+function getLastName(){
+	return document.getElementById("lastName");
+}
+
+function getPhoneNumber(){
+	return document.getElementById("phoneNumber");
+}
+
+function getAddress(){
+	return document.getElementById("address");
+}
+
+function getCountry(){
+	return document.getElementById("country");
+}
+
+function getState(){
+	return document.getElementById("state");
+}
+
+function getLocalGovernment(){
+	return document.getElementById("localgovernment");
+}
+
+function getOccupation(){
+	return document.getElementById("occupation");
+}
+
+function getReligion(){
+	return document.getElementById("religion");
 }
 
 function getMainContainer(){
@@ -12,6 +64,10 @@ function getMainContainer(){
 
 function getMainProgressBar(){
 	return document.getElementById("progressContainer");
+}
+
+function getUpdateProfileBtn(){
+	return document.getElementById("updateProfileBtn");
 }
 
 function getDisplayContainer(){

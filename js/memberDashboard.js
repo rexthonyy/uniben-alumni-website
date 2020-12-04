@@ -2,6 +2,8 @@ var tabs;
 
 var activeTabIndex = 0;
 
+var ajaxRequest;
+
 window.onload = () => {
 	setup();
 	handleClickListeners();
@@ -9,7 +11,6 @@ window.onload = () => {
 
 function setup(){
 	setupTabs();
-	setupDisplay();
 }
 
 function setupTabs(){
@@ -20,17 +21,6 @@ function setupTabs(){
 		new AdminTab(3),
 		new LogoutTab(4)
 	];
-}
-
-function setupDisplay(){
-	let imageLink = undefined;
-	if(sessionStorage.getItem('imageLink')){
-		imageLink = sessionStorage.getItem('imageLink');
-	}else{
-		imageLink = 'images/icons/ic_avatar.PNG';
-	}
-	getUserImage().src = imageLink;
-	getUserName().textContent = sessionStorage.getItem('firstName') + " " + sessionStorage.getItem('lastName');
 }
 
 function handleClickListeners(){
@@ -54,4 +44,8 @@ function handleSideNavClickListener(){
 
 function tabCallback(data){
 	tabs[data.index].tabCallback(data);
+}
+
+function uploadProfileImageCallback(){
+	tabs[0].uploadProfileImageCallback();
 }

@@ -13,8 +13,13 @@
 }
 
 #sidebar{
+	position: fixed;
 	width: 280px;
 	overflow: auto;
+}
+
+#sidebardummy{
+	width: 280px;
 }
 
 #main{

@@ -30,9 +30,6 @@ function login(email, password){
 	.then(json => {
 		if(json.status == "success"){
 			sessionStorage.setItem('userId', json.userId);
-			sessionStorage.setItem("firstName", json.firstName);
-			sessionStorage.setItem("lastName", json.lastName);
-			sessionStorage.setItem("imageLink", json.imageLink);
 			getProgressContainer().style.display = "none";
 			window.open("memberDashboard.html", "_self");
 		}else{

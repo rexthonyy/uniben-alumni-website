@@ -117,6 +117,10 @@ h1{
 	width: 100px;
 }
 
+.width-120px{
+	width: 120px;
+}
+
 .width-200px{
 	width: 200px;
 }
@@ -173,6 +177,10 @@ h1{
 	height: 100px;
 }
 
+.height-120px{
+	height: 120px;
+}
+
 .height-170px{
 	height: 170px;
 }
@@ -221,6 +229,16 @@ table{
 .img_64px{
 	width: 64px;
 	height: 64px;
+}
+
+.img_32px{
+	width: 32px;
+	height: 32px;
+}
+
+.img_16px{
+	width: 16px;
+	height: 16px;
 }
 
 .table-alignTop{
@@ -456,6 +474,10 @@ table{
 	border-radius: 45px;
 }
 
+.curDiv-60px{
+	border-radius: 60px;
+}
+
 .h-space-3-pp{
 	width: 3%;
 }
@@ -506,6 +528,10 @@ table{
 
 .blueColor{
 	color: blue;
+}
+
+.greenColor{
+	color: green;
 }
 
 .underline{
@@ -580,6 +606,10 @@ table{
 
 .space-32px{
 	padding: 16px;
+}
+
+.hover{
+	cursor: pointer;
 }
 
 @media (max-width: 700px){

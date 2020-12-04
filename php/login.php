@@ -25,7 +25,7 @@
 			include_once "database/DbTableOperator.cls.php";
 
 			// check whether email is already registered			
-			$properties['columns'] = Column::ID.','.Column::FIRST_NAME.','.Column::LAST_NAME.','.Column::IMAGELINK;
+			$properties['columns'] = Column::ID;
 			$properties['condition'] = "WHERE email='".$email."' AND password='".$password."'";
 			$properties['orderBy'] = "";
 			$properties['limit'] = "LIMIT 1";
@@ -41,9 +41,6 @@
 			}else{
 				$response['status'] = 'success';
 				$response['userId'] = $row[0][Column::ID];
-				$response['firstName'] = $row[0][Column::FIRST_NAME];
-				$response['lastName'] = $row[0][Column::LAST_NAME];
-				$response['imageLink'] = $row[0][Column::IMAGELINK];
 			}
 		}
 		
