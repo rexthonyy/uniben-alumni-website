@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	    <meta name="description" content="University of Benin Alumni Association">
+		<title>Member Dashboard - UNIBEN ALUMNI ASSOCIATION</title>
+		<link type="text/css" rel="stylesheet" href="css/memberDashboard.css"/>
+		<link type="image/x-icon" rel="icon" href="images/icons/website_icon.png">
+		<script type="text/javascript" src="js/utility.js"></script>
+		<script type="text/javascript" src="js/memberDashboardGetters.js"></script>
+		<script type="text/javascript" src="js/memberDashboardDisplays.js"></script>
+		<script type="text/javascript" src="js/memberDashboardTabs.js"></script>
+		<script type="text/javascript" src="js/memberDashboard.js"></script>
+	</head>
+
+	<body>
+		<div id="mainContainer">
+			<section id="#desktop">
+				<div class="float-left fullHeight footerBackgroundColor" id="sidebar">
+					<div class="centerText fs-medium mt-32px whiteColor">
+						Member Dashboard
+					</div>
+					<div class="centerText mt-32px">
+						<img class="width-90px height-90px curDiv-45px" id="userImage" src="images/icons/ic_avatar.PNG"/>
+					</div>
+					<div class="centerText fs-medium customColor1 mt-16px" id="username">
+						Rex Anthony
+					</div>
+
+					<div class="space-32px"></div>
+					<table class="sidebarItem activeSidebarItem">
+						<tr>
+							<td class="width-5px "></td>
+							<td class="width-20-pp  centerText">
+								<img class="width-30px height-30px" src="images/icons/ic_inbox.png"/>
+							</td>
+							<td class=" fs-normal whiteColor">
+								My profile
+							</td>
+						</tr>
+					</table>
+
+					<table class="sidebarItem">
+						<tr>
+							<td class="width-5px "></td>
+							<td class="width-20-pp  centerText">
+								<img class="width-30px height-30px" src="images/icons/ic_inbox.png"/>
+							</td>
+							<td class=" fs-normal whiteColor">
+								Payment History
+							</td>
+						</tr>
+					</table>
+
+					<table class="sidebarItem">
+						<tr>
+							<td class="width-5px  "></td>
+							<td class="width-20-pp  centerText">
+								<img class="width-30px height-30px" src="images/icons/ic_inbox.png"/>
+							</td>
+							<td class=" fs-normal whiteColor">
+								Manage account
+							</td>
+						</tr>
+					</table>
+
+					<table class="sidebarItem">
+						<tr>
+							<td class="width-5px "></td>
+							<td class="width-20-pp  centerText">
+								<img class="width-30px height-30px" src="images/icons/ic_inbox.png"/>
+							</td>
+							<td class=" fs-normal whiteColor">
+								Admin
+							</td>
+						</tr>
+					</table>
+
+					<table class="sidebarItem">
+						<tr>
+							<td class="width-5px "></td>
+							<td class="width-20-pp  centerText">
+								<img class="width-30px height-30px" src="images/icons/ic_inbox.png"/>
+							</td>
+							<td class=" fs-normal whiteColor">
+								Logout
+							</td>
+						</tr>
+					</table>				</div>
+				<div class="float-left fullHeight" id="main">
+					<div class="width-100-pp fullHeight" id="display">
+						<!-- My profile -->
+						<div class="displayContainer">
+							<div class="centerDivHorizontally fullHeight width-80-pp pad16px">
+								<table class="width-100-pp">
+									<tr>
+										<td class="width-90px">
+											<img class="width-90px height-90px curDiv-45px mr-16px" src="images/icons/ic_avatar.PNG"/>
+										</td>
+										<td>
+											<p class="blueColor underline hidden">Remove image</p>
+										</td>
+									</tr>
+								</table>
+								<table class="width-100-pp mt-32px">
+									<tr>
+										<td>
+											<label class="bold" for="firstName">First name</label>
+											<div class="mt-8px">
+												<input type="text" class="width-100-pp pad8px" id="firstName"/>
+											</div>
+										</td>
+										<td class="width-30px"></td>
+										<td>
+											<label class="bold" for="lastName">Last name</label>
+											<div class="mt-8px">
+												<input type="text" class="width-100-pp pad8px " id="lastName"/>
+											</div>
+										</td>
+									</tr>
+								</table>
+								<div>
+
+									
+
+								</div>
+							</div>
+						</div>
+
+						<!-- Payment history -->
+						<div class="displayContainer">
+							Payment history
+						</div>
+
+						<!-- Manage account -->
+						<div class="displayContainer">
+							Manage account
+						</div>
+
+						<!-- Admin page -->
+						<div class="displayContainer">
+							Admin page
+						</div>
+					</div>
+					<span id="loadingContainer">Please wait...</span>
+				</div>
+			</section>
+
+			<section id="tablet">
+				Tablet
+			</section>
+
+			<section id="mobile">
+				Mobile
+			</section>
+		</div>
+		<p id="progressContainer">Please wait...</p>
+	</body>
+</html>

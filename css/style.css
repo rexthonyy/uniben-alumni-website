@@ -73,6 +73,10 @@ h1{
 	width: 10%;
 }
 
+.width-5px{
+	width: 5px;
+}
+
 .width-10px{
 	width: 10px;
 }
@@ -196,6 +200,11 @@ h1{
 .height-100pp{
 	height: 100%;
 }
+
+.fullHeight{
+	height: 100vh;
+}
+
 table{
 	width: 100%;
 	/*border: 1px solid black;*/
@@ -363,6 +372,10 @@ table{
 	clear: both;
 }
 
+.pad8px16px{
+	padding: 8px 16px;
+}
+
 .pad8px{
 	padding: 8px;
 }
@@ -439,6 +452,10 @@ table{
 	padding-right: 32px;
 }
 
+.curDiv-45px{
+	border-radius: 45px;
+}
+
 .h-space-3-pp{
 	width: 3%;
 }
@@ -448,7 +465,35 @@ table{
 }
 
 .backgroundColorPrimary{
+	background-color: rgb(80, 55, 55);
+}
+
+.blueBackgroundColor{
 	background-color: blue;
+}
+
+.greenBackgroundColor{
+	background-color: green;
+}
+
+.grayBackgroundColor{
+	background-color: rgb(242, 242, 242);
+}
+
+.navyBackgroundColor{
+	background-color: rgb(40, 40, 60);
+}
+
+.customColor1{
+	color: rgb(142, 142, 142);
+}
+
+.redColor{
+	color: red;
+}
+
+.blackColor{
+	color: black;
 }
 
 .whiteColor{
@@ -459,8 +504,12 @@ table{
 	color: rgb(190, 190, 190);
 }
 
-.grayBackgroundColor{
-	background-color: rgb(242, 242, 242);
+.blueColor{
+	color: blue;
+}
+
+.underline{
+	text-decoration: underline;
 }
 
 .footerColor{
@@ -515,6 +564,22 @@ table{
 .buttonPrimary:hover{
 	cursor: pointer;
 	background-color: rgb(60, 35, 35);
+}
+
+.hidden{
+	display: none;
+}
+
+.showDiv{
+	display: block;
+}
+
+.showSpan{
+	display: span;
+}
+
+.space-32px{
+	padding: 16px;
 }
 
 @media (max-width: 700px){

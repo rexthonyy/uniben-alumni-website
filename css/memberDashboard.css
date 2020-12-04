@@ -1,0 +1,52 @@
+@import 'style.css';
+
+#mainContainer{
+	display: block;
+}
+
+#progressContainer{
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#sidebar{
+	width: 280px;
+	overflow: auto;
+}
+
+#main{
+	width: calc(100% - 280px);
+}
+
+#display{
+	display: block;
+}
+
+#loadingContainer{
+	display: none;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.sidebarItem{
+	width: 100%;
+	padding: 16px 0;
+}
+
+.sidebarItem:hover, .activeSidebarItem{
+	cursor: pointer;
+	background-color: rgb(70, 45, 45);
+}
+
+.displayContainer{
+	display: none;
+}
+
+.displayContainer:nth-child(1){
+	display: block;
+}
