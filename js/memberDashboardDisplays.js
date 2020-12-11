@@ -38,30 +38,12 @@ class Display {
         getDisplayTabs()[this.tabIndex].style.display = "none";
     }
 
-
-    setup(){}
-}
-
-class MyProfileDisplay extends Display {
-	constructor(tabIndex){
-		super(tabIndex);
-	}
-
-	setup(){
-		Display.OpenDisplayView();
-		this.openDisplayTabView();
-		Display.OpenMainView();
+    openView(){
+        getViews()[this.tabIndex].style.display = "block";
     }
-
-    close(){
-        Display.CloseAllDisplayTabViews();
-		Display.CloseDisplayView();
-    }
-}
-
-class PaymentHistoryDisplay extends Display {
-    constructor(tabIndex){
-        super(tabIndex);
+    
+    closeView(){
+        getViews()[this.tabIndex].style.display = "none";
     }
 
     setup(){
@@ -73,6 +55,18 @@ class PaymentHistoryDisplay extends Display {
     close(){
         Display.CloseAllDisplayTabViews();
         Display.CloseDisplayView();
+    }
+}
+
+class MyProfileDisplay extends Display {
+	constructor(tabIndex){
+		super(tabIndex);
+	}
+}
+
+class PaymentHistoryDisplay extends Display {
+    constructor(tabIndex){
+        super(tabIndex);
     }
 }
 
@@ -80,33 +74,11 @@ class ManageAccountDisplay extends Display {
     constructor(tabIndex){
         super(tabIndex);
     }
-
-    setup(){
-        Display.OpenDisplayView();
-        this.openDisplayTabView();
-        Display.OpenMainView();
-    }
-
-    close(){
-        Display.CloseAllDisplayTabViews();
-        Display.CloseDisplayView();
-    }
 }
 
 class AdminDisplay extends Display {
     constructor(tabIndex){
         super(tabIndex);
-    }
-
-    setup(){
-        Display.OpenDisplayView();
-        this.openDisplayTabView();
-        Display.OpenMainView();
-    }
-
-    close(){
-        Display.CloseAllDisplayTabViews();
-        Display.CloseDisplayView();
     }
 }
 
@@ -114,16 +86,49 @@ class LogoutDisplay extends Display {
     constructor(tabIndex){
         super(tabIndex);
     }
+}
+
+class ViewsDisplay extends Display {
+    constructor(tabIndex){
+        super(tabIndex);
+    }
 
     setup(){
-        Display.OpenDisplayView();
-        //this.openDisplayTabView();
-        Display.OpenMainView();
+        this.openView();
     }
 
     close(){
-        Display.CloseAllDisplayTabViews();
-        Display.CloseDisplayView();
+        this.closeView();
+    }
+}
+
+class AdminViewDisplay extends ViewsDisplay {
+    constructor(tabIndex){
+        super(tabIndex);
+    }
+}
+
+class SearchMembersViewDisplay extends ViewsDisplay {
+    constructor(tabIndex){
+        super(tabIndex);
+    }
+}
+
+class MemberProfileViewDisplay extends ViewsDisplay {
+    constructor(tabIndex){
+        super(tabIndex);
+    }
+}
+
+class EditPageViewDisplay extends ViewsDisplay {
+    constructor(tabIndex){
+        super(tabIndex);
+    }
+}
+
+class NationalExcosViewDisplay extends ViewsDisplay {
+    constructor(tabIndex){
+        super(tabIndex);
     }
 }
 

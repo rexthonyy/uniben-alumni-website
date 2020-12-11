@@ -10,6 +10,7 @@
 		const CREATED = "created";
 
 		//users_tb
+		const IS_ADMIN = "isAdmin";
 		const IS_VERIFIED = "isVerified";
 		//const EMAIL = "email";
 		const PASSWORD = "password";
@@ -25,5 +26,14 @@
 		const OCCUPATION = "occupation";
 		const RELIGION = "religion";
 		//const CREATED = "createdAt";
+
+		//pages_tb
+		//const TITLE = "title";
+		const CONTENT = "content";
+
+		//national_excos_tb
+		const NAME = "name";
+		//const TITLE = "title";
+		//const IMAGELINK = "imageLink";
 	}
 ?>

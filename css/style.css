@@ -45,6 +45,10 @@ h1{
 	width: 50%;
 }
 
+.width-49-pp{
+	width: auto;
+}
+
 .width-45-pp{
 	width: 45%;
 }
@@ -71,6 +75,14 @@ h1{
 
 .width-10-pp{
 	width: 10%;
+}
+
+.width-2-pp{
+	width: 2%;
+}
+
+.width-0px{
+	width: 0px;
 }
 
 .width-5px{
@@ -137,6 +149,11 @@ h1{
 	width: 500px;
 }
 
+.width-1000px{
+	width: 450px;
+}
+
+
 .height-10px{
 	height: 10px;
 }
@@ -201,6 +218,10 @@ h1{
 	height: 400px;
 }
 
+.height-450px{
+	height: 450px;
+}
+
 .height-500px{
 	height: 500px;
 }
@@ -213,6 +234,21 @@ h1{
 	height: 100vh;
 }
 
+.height-60vh{
+	height: 60vh;
+}
+
+.height-70vh{
+	height: 70vh;
+}
+
+.height-80vh{
+	height: 80vh;
+}
+
+.height-90vh{
+	height: 90vh;
+}
 table{
 	width: 100%;
 	/*border: 1px solid black;*/
@@ -259,6 +295,10 @@ table{
 
 .no-border{
 	border: 0;
+}
+
+.no-resize{
+	resize: none;
 }
 
 .border-radii-8px{
@@ -426,6 +466,10 @@ table{
 	padding-top: 85px;
 }
 
+.pr-8px{
+	padding-right: 8px;
+}
+
 .pr-16px{
 	padding-right: 16px;
 }
@@ -440,6 +484,14 @@ table{
 
 .pb-32px{
 	padding-bottom: 32px;
+}
+
+.pb-64px{
+	padding-bottom: 64px;
+}
+
+.pl-4px{
+	padding-left: 4px;
 }
 
 .pl-8px{
@@ -470,6 +522,10 @@ table{
 	padding-right: 32px;
 }
 
+.curDiv-30px{
+	border-radius: 30px;
+}
+
 .curDiv-45px{
 	border-radius: 45px;
 }
@@ -488,6 +544,10 @@ table{
 
 .backgroundColorPrimary{
 	background-color: rgb(80, 55, 55);
+}
+
+.redBackgroundColor{
+	background-color: red;
 }
 
 .blueBackgroundColor{
@@ -582,6 +642,16 @@ table{
 	border-radius: 8px;
 }
 
+.buttonNormal{
+	background-color: rgb(200, 200, 200);
+	color: black;
+}
+
+.buttonNormal:hover{
+	cursor: pointer;
+	background-color: rgb(150, 150, 150);
+}
+
 .buttonPrimary{
 	background-color: rgb(80, 55, 55);
 	color: white;
@@ -590,6 +660,20 @@ table{
 .buttonPrimary:hover{
 	cursor: pointer;
 	background-color: rgb(60, 35, 35);
+}
+
+.buttonDanger{
+	background-color: rgb(222, 55, 55);
+	color: white;
+}
+
+.buttonDanger:hover{
+	cursor: pointer;
+	background-color: rgb(180, 55, 55);
+}
+
+.invisible{
+	visibility: visible;
 }
 
 .hidden{
@@ -604,12 +688,46 @@ table{
 	display: span;
 }
 
+.space-16px{
+	padding: 8px;
+}
+
+.space-24px{
+	padding: 12px;
+}
+
 .space-32px{
 	padding: 16px;
 }
 
 .hover{
 	cursor: pointer;
+}
+
+.gray-background-onhover:hover{
+	background-color: rgba(222, 222, 222, 0.5);
+}
+
+.overflow{
+	overflow: auto;
+}
+
+.rex-float-height-hook{
+    clear: both;
+}
+
+.text-truncate{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.inline-block{
+	display: inline-block;
+}
+
+.table-space-vertical-normal{
+	/*border-spacing: 0px 0px;*/
 }
 
 @media (max-width: 700px){

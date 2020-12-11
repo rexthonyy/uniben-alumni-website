@@ -13,14 +13,16 @@
 
 		$response = array();
 
-		$index = $_POST['index'];
-		if(isset($index)){
-			$response['index'] = $index;
+		if(isset($_POST['index'])){
+			$response['index'] = $_POST['index'];
+		}
+		if(isset($_POST['viewIndex'])){
+			$response['viewIndex'] = $_POST['viewIndex'];
 		}
 
 		$userId = $_POST['userId'];
 
-		$properties['columns'] = Column::IS_VERIFIED.",".Column::FIRST_NAME.",".Column::LAST_NAME.",".Column::IMAGELINK.",".Column::TITLE.",".Column::PHONENUMBER.",".Column::ADDRESS.",".Column::COUNTRY.",".Column::STATE.",".Column::LOCALGOV.",".Column::OCCUPATION.",".Column::RELIGION.",".Column::CREATED;
+		$properties['columns'] = Column::IS_ADMIN.",".Column::IS_VERIFIED.",".Column::FIRST_NAME.",".Column::LAST_NAME.",".Column::IMAGELINK.",".Column::TITLE.",".Column::PHONENUMBER.",".Column::ADDRESS.",".Column::COUNTRY.",".Column::STATE.",".Column::LOCALGOV.",".Column::OCCUPATION.",".Column::RELIGION.",".Column::CREATED;
 		$properties['condition'] = "WHERE id=$userId";
 		$properties['orderBy'] = "";
 		$properties['limit'] = "LIMIT 1";
@@ -34,6 +36,8 @@
 			$response['status'] = 'failed';
 			$response['err'] = 'user unavailable';
 		}else{
+			$response['status'] = 'success';
+			$response['isAdmin'] = $row[0][Column::IS_ADMIN];
 			$response['isVerified'] = $row[0][Column::IS_VERIFIED];
 			$response['firstName'] = $row[0][Column::FIRST_NAME];
 			$response['lastName'] = $row[0][Column::LAST_NAME];

@@ -31,7 +31,7 @@ function handleSideNavClickListener(){
 	let sidebarTabs = getSidebarTabs();
 	for(let i = 0; i < sidebarTabs.length; i++){
 		sidebarTabs[i].onclick = () => {
-			if(activeTabIndex != i){
+			if(activeTabIndex != i || activeTabIndex == 3){
 				tabs[activeTabIndex].close();
 				tabs[i].click();
 				activeTabIndex = i;

@@ -62,12 +62,17 @@ class MyProfileTab extends Tab {
 	}
 
 	setup(data){
-		this.loadData(data);
-		this.setClickListener();
+		if(data.status == 'success'){
+			this.loadData(data);
+			this.setClickListener();
+		}else{
+			window.open("index.html", '_self');
+		}
 	}
 
 	loadData(data){
-		getUserImage().src = data.imageLink;
+		let memberImageSrc = data.imageLink == '' ? 'images/icons/ic_avatar.PNG' : data.imageLink;
+		getUserImage().src = memberImageSrc;
 		getUserId().value = sessionStorage.getItem("userId");
 		getVerificationStatus().textContent = data.isVerified=='y'?'Verified':'Unverified';
 		getVerificationStatus().className = data.isVerified=='y'?'greenColor':'redColor';
@@ -81,6 +86,10 @@ class MyProfileTab extends Tab {
 		getLocalGovernment().value = data.localgov;
 		getOccupation().value = data.occupation;
 		getReligion().value = data.religion;
+
+		//get the side bar tabs
+		getSidebarTabs()[1].style.display = 'none';
+		getSidebarTabs()[3].style.display = data.isAdmin=='y'?'':'none';
 	}
 
 	setClickListener(){
@@ -154,7 +163,7 @@ class MyProfileTab extends Tab {
 				sendPostRequest(url, data)
 				.then(json => {
 					Display.OpenDisplayView();
-					console.log(json.status);
+					alert("Profile updated successfully");
 				}).catch(err => {
 					console.error(err);
 				});
@@ -172,13 +181,12 @@ class PaymentHistoryTab extends Tab {
 		super(tabIndex, new PaymentHistoryDisplay(tabIndex));
 	}
 
-	getRouteUrl(){
-		return "php/dashboardTab.php";
+	click(){
+		super.click();
+		super.tabCallback(undefined);
 	}
 
-	getData(){
-		return { 'index': this.tabIndex, 'userId': sessionStorage.getItem("userId") };
-	}
+	sendRequest(url, callback, data){}
 
 	setup(data){
 		console.log("Payment history tab");
@@ -194,16 +202,90 @@ class ManageAccountTab extends Tab {
 		super(tabIndex, new ManageAccountDisplay(tabIndex));
 	}
 
-	getRouteUrl(){
-		return "php/getProfile.php";
+	click(){
+		super.click();
+		super.tabCallback(undefined);
+		this.setClickListener();
 	}
 
-	getData(){
-		return { 'index': this.tabIndex, 'userId': sessionStorage.getItem("userId") };
+	sendRequest(url, callback, data){}
+
+	setClickListener(){
+		this.handleChangeEmailBtnClick();
+		this.handleChangePasswordBtnClick();
 	}
 
-	setup(data){
-		console.log("Manage account tab");
+	handleChangeEmailBtnClick(){
+		getChangeEmailBtn().onclick = () => {
+			let newEmail = getNewEmail().value;
+			let currentPassword = getChangeEmailPassword().value;
+
+			if(!newEmail || !currentPassword){
+				alert("Please enter your new email and current password");
+			}else{
+				Display.CloseDisplayView();
+
+				let url = 'php/changeEmail.php';
+
+				let data = { userId: sessionStorage.getItem('userId'), email: newEmail, password: currentPassword };
+
+				sendPostRequest(url, data)
+				.then(json => {
+					Display.OpenDisplayView();
+					if(json.status == 'success'){
+						alert("Email updated successfully");
+						getNewEmail().value = '';
+						getChangeEmailPassword().value = '';
+					}else{
+						alert(json.error);
+					}
+				}).catch(err => {
+					console.error(err);
+				});
+			}
+		};
+	}
+
+	handleChangePasswordBtnClick(){
+		getChangePasswordBtn().onclick = () => {
+			let currentPassword = getChangePasswordCurrentPassword().value;
+			let newPassword1 = getChangePasswordNewPassword().value;
+			let newPassword2 = getChangePasswordRetypePassword().value;
+
+			if(!currentPassword || !newPassword1 || !newPassword2){
+				alert("Please fill in the empty fields");
+			}else{
+				if(newPassword1 !== newPassword2){
+					alert("Passwords do not match");
+				}else{
+					if(newPassword1.length < 6){
+						alert("Password must be greater than 6 characters");
+					}else{
+						Display.CloseDisplayView();
+
+						let url = 'php/changePassword.php';
+
+						let data = { userId: sessionStorage.getItem('userId'), currentPassword: currentPassword, newPassword: newPassword1 };
+
+						sendPostRequest(url, data)
+						.then(json => {
+							Display.OpenDisplayView();
+							if(json.status == 'success'){
+								alert("Password updated successfully");
+								getChangePasswordCurrentPassword().value = '';
+								getChangePasswordNewPassword().value = '';
+								getChangePasswordRetypePassword().value = '';
+							}else{
+								alert(json.error);
+							}
+						}).catch(err => {
+							console.error(err);
+						});
+					}
+				}
+				
+			}
+		};
 	}
 
 	clearData(){
@@ -214,22 +296,31 @@ class ManageAccountTab extends Tab {
 class AdminTab extends Tab {
 	constructor(tabIndex){
 		super(tabIndex, new AdminDisplay(tabIndex));
+		this.activeView = 0;
+		this.views = [
+			new AdminView(this, 0),
+			new SearchMembersView(this, 1),
+			new MemberProfileView(this, 2),
+			new EditPageView(this, 3),
+			new NationalExcosView(this, 4)
+		];
 	}
 
-	getRouteUrl(){
-		return "php/getProfile.php";
+	click(){
+		this.deselectAllSideNavTabs();
+		this.selectSideNavTab(this.tabIndex);
+		this.display.setup();
+		this.views[this.activeView].click();//display the admin view
 	}
 
-	getData(){
-		return { 'index': this.tabIndex, 'userId': sessionStorage.getItem("userId") };
-	}
-
-	setup(data){
-		console.log("Admin tab");
+	//overloaded function
+	tabCallback(data){
+		this.views[data.viewIndex].tabCallback(data);
 	}
 
 	clearData(){
-		console.log("Clear admin data");
+		this.views[this.activeView].close();
+		this.activeView = 0;
 	}
 }
 
@@ -238,16 +329,8 @@ class LogoutTab extends Tab {
 		super(tabIndex, new LogoutDisplay(tabIndex));
 	}
 
-	getRouteUrl(){
-		return "php/getProfile.php";
-	}
-
-	getData(){
-		return { 'index': this.tabIndex, 'userId': sessionStorage.getItem("userId") };
-	}
-
-	setup(data){
-		console.log("Logout tab");
+	click(){
+		window.open('index.html', '_self');
 	}
 
 	clearData(){

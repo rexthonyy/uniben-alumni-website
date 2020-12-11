@@ -10,6 +10,7 @@
 		<script type="text/javascript" src="js/utility.js"></script>
 		<script type="text/javascript" src="js/memberDashboardGetters.js"></script>
 		<script type="text/javascript" src="js/memberDashboardDisplays.js"></script>
+		<script type="text/javascript" src="js/memberDashboardViews.js"></script>
 		<script type="text/javascript" src="js/memberDashboardTabs.js"></script>
 		<script type="text/javascript" src="js/memberDashboard.js"></script>
 	</head>
@@ -38,7 +39,7 @@
 						<tr>
 							<td class="width-5px "></td>
 							<td class="width-20-pp  centerText">
-								<img class="width-30px height-30px" src="images/icons/ic_inbox.png"/>
+								<img class="width-30px height-30px" src="images/icons/ic_profile.png"/>
 							</td>
 							<td class=" fs-normal whiteColor">
 								My profile
@@ -50,7 +51,7 @@
 						<tr>
 							<td class="width-5px "></td>
 							<td class="width-20-pp  centerText">
-								<img class="width-30px height-30px" src="images/icons/ic_inbox.png"/>
+								<img class="width-30px height-30px" src="images/icons/ic_payment_history.png"/>
 							</td>
 							<td class=" fs-normal whiteColor">
 								Payment History
@@ -62,7 +63,7 @@
 						<tr>
 							<td class="width-5px  "></td>
 							<td class="width-20-pp  centerText">
-								<img class="width-30px height-30px" src="images/icons/ic_inbox.png"/>
+								<img class="width-30px height-30px" src="images/icons/ic_manage_account.png"/>
 							</td>
 							<td class=" fs-normal whiteColor">
 								Manage account
@@ -70,11 +71,11 @@
 						</tr>
 					</table>
 
-					<table class="sidebarItem">
+					<table class="sidebarItem hidden">
 						<tr>
 							<td class="width-5px "></td>
 							<td class="width-20-pp  centerText">
-								<img class="width-30px height-30px" src="images/icons/ic_inbox.png"/>
+								<img class="width-30px height-30px" src="images/icons/ic_admin.png"/>
 							</td>
 							<td class=" fs-normal whiteColor">
 								Admin
@@ -100,7 +101,8 @@
 						<!-- My profile -->
 						<div class="displayContainer">
 							<div class="centerDivHorizontally fullHeight width-80-pp pad16px">
-								<table class="width-100-pp">
+								<h1 class="fs-large">My Profile</h1>
+								<table class="width-100-pp mt-32px">
 									<tr>
 										<td class="width-90px">
 											<img class="width-120px height-120px curDiv-60px mr-16px hover" id="userImage" src="images/icons/ic_avatar.PNG"/>
@@ -484,17 +486,475 @@
 
 						<!-- Payment history -->
 						<div class="displayContainer">
-							Payment history
+							<div class="centerDivHorizontally fullHeight width-80-pp pad16px">
+								<h1 class="fs-large">Payment History</h1>
+								<div class="space-32px"></div>
+								<div class="space-32px"></div>
+								<div class="pb-32px">
+									<p class="fs-normal">Your payment history will be displayed here</p>
+								</div>
+							</div>
 						</div>
 
 						<!-- Manage account -->
 						<div class="displayContainer">
-							Manage account
+							<div class="centerDivHorizontally fullHeight width-80-pp pad16px">
+								<h1 class="fs-large">Manage Account</h1>
+								<div class="space-32px"></div>
+								<div class="space-32px"></div>
+								<table class="width-100-pp">
+									<tr>
+										<td class="border table-alignTop pad16px width-50-pp">
+											<h1 class="fs-medium">Change Email Address</h1>
+											<div class="width-100-pp mt-32px">
+												<label class="bold" for="manage_acc_email">New Email</label>     
+			        							<div class="mt-8px">
+									            	<input type="email" class="width-100-pp pad8px" id="manage_acc_email" required/>
+									        	</div>
+								        	</div>
+								        	<div class="width-100-pp mt-16px">
+												<label class="bold" for="manage_acc_cur_password1">Current Password</label>     
+			        							<div class="mt-8px">
+									            	<input type="password" class="width-100-pp pad8px" id="manage_acc_cur_password1" required/>
+									        	</div>
+								        	</div>
+								        	<div class="space-32px"></div>
+								        	<div class="space-32px"></div>
+								        	<div class="space-16px"></div>
+								        	
+								        	<div class="width-100-pp mt-32px mb-32px">
+								        		<button class="width-100-pp pad16px div-radii-8px buttonPrimary no-border" id="changeEmailBtn">CHANGE EMAIL</button>
+								        	</div>
+										</td>
+										<td class="width-20px"></td>
+										<td class="border pad16px width-50-pp">
+											<h1 class="fs-medium">Change Password</h1>
+											<div class="width-100-pp mt-32px">
+												<label class="bold" for="manage_acc_cur_password2">Current Password</label>     
+			        							<div class="mt-8px">
+									            	<input type="password" class="width-100-pp pad8px" id="manage_acc_cur_password2" required/>
+									        	</div>
+								        	</div>
+								        	<div class="width-100-pp mt-16px">
+												<label class="bold" for="manage_acc_new_password">New password</label>     
+			        							<div class="mt-8px">
+									            	<input type="password" class="width-100-pp pad8px" id="manage_acc_new_password" required/>
+									        	</div>
+								        	</div>
+								        	<div class="width-100-pp mt-16px">
+												<label class="bold" for="manage_acc_retype_new_password">Re-type New Password</label>     
+			        							<div class="mt-8px">
+									            	<input type="password" class="width-100-pp pad8px" id="manage_acc_retype_new_password" required/>
+									        	</div>
+								        	</div>
+								        	<div class="width-100-pp mt-32px mb-32px">
+								        		<button class="width-100-pp pad16px div-radii-8px buttonPrimary no-border" id="changePasswordBtn">CHANGE PASSWORD</button>
+								        	</div>
+										</td>
+									</tr>
+								</table>
+								
+					        	
+					        	
+					        	<div class="space-32px"></div>
+					        	<div class="space-32px"></div>
+					        	<div class="space-32px"></div>
+							</div>
 						</div>
 
 						<!-- Admin page -->
 						<div class="displayContainer">
-							Admin page
+							<!-- Admin home page -->
+							<div class="viewContainer">
+								<div class="centerDivHorizontally width-80-pp pad16px">
+									<div class="space-32px"></div>
+									<div class="space-32px"></div>
+									<div class="space-32px"></div>
+									<h1 class="fs-medium centerText">Admin</h1>
+									<div class="space-32px"></div>
+									<table class="width-100-pp">
+										<tr>
+											<td class="width-80-pp">
+												<input class="width-100-pp pad16px fs-medium" type="text" placeholder="Search for members" id="searchMembersInput">
+											</td>
+											<td>
+												<button class="width-100-pp height-60px hover" id="searchMembersBtn">Search</button>
+											</td>
+										</tr>
+									</table>
+
+									<div class="space-32px"></div>
+
+									<div class="width-100-pp">
+										<!-- <h3 class="fs-normal pl-8px">Stats</h3> -->
+										<div class="space-32px"></div>
+										<table class="width-100-pp centerText">
+										<tr>
+											<td>
+												<div class="table-alignMiddle border pad16px">
+													<p class="fs-medium" id="numRegisteredMembers">32</p>
+													<p class="fs-normal mt-8px">Total Registered</p>
+												</div>
+											</td>
+											<td class="width-10px"></td>
+											<td>
+												<div class="border pad16px">
+													<p class="fs-medium" id="numVerifiedMembers">4</p>
+													<p class="fs-normal mt-8px">Total Verified</p>
+												</div>
+											</td>
+											<td class="width-10px"></td>
+											<td>
+												<div class="border pad16px">
+													<p class="fs-medium" id="numUnverifiedMembers">28</p>
+													<p class="fs-normal mt-8px">Total Unverified</p>
+												</div>
+											</td>
+										</tr>
+										</table>
+									</div>
+
+									<div class="space-32px"></div>
+									<div class="space-32px"></div>
+
+									<div class="width-100-pp">
+										<h3 class="fs-normal pl-8px">About us</h3>
+										<div class="space-16px"></div>
+										<div class="width-30-pp float-left inline-block">
+											<img class="table-alignMiddle width-60px height-60px pad16px" src="images/icons/ic_checkmark.png" />
+											<span class="fs-normal hover blueColor" id="wb_history">History</span> 
+										</div>
+										<div class="width-30-pp float-left inline-block">
+											<img class="table-alignMiddle width-60px height-60px pad16px" src="images/icons/ic_checkmark.png" />
+											<span class="fs-normal hover blueColor truncate" id="wb_constitution">Constitution</span> 
+										</div>
+										<div class="width-30-pp float-left inline-block">
+											<img class="table-alignMiddle width-60px height-60px pad16px" src="images/icons/ic_checkmark.png" />
+											<span class="fs-normal hover blueColor" id="wb_mission_and_vision">Mission and Vision</span> 
+										</div>
+									</div>
+									<div class="space-32px"></div>
+									<div class="space-32px"></div>
+									<div class="space-32px"></div>
+									<div class="width-100-pp">
+										<h3 class="fs-normal pl-8px">Membership</h3>
+										<div class="space-16px"></div>
+										<div class="width-30-pp float-left inline-block">
+											<img class="table-alignMiddle width-60px height-60px pad16px" src="images/icons/ic_checkmark.png" />
+											<span class="fs-normal hover blueColor" id="wb_national_chairman">National Chairman</span> 
+										</div>
+										<div class="width-30-pp float-left inline-block">
+											<img class="table-alignMiddle width-60px height-60px pad16px" src="images/icons/ic_checkmark.png" />
+											<span class="fs-normal hover blueColor truncate" id="wb_national_excos">National Excos</span> 
+										</div>
+										<div class="width-30-pp float-left inline-block">
+											<img class="table-alignMiddle width-60px height-60px pad16px" src="images/icons/ic_checkmark.png" />
+											<span class="fs-normal hover blueColor" id="wb_past_national_chairmen">Past National Chairmen</span> 
+										</div>
+									</div>
+									<div class="space-32px"></div>
+									<div class="space-32px"></div>
+									<div class="space-32px"></div>
+									<div class="width-100-pp">
+										<h3 class="fs-normal pl-8px">Events</h3>
+										<div class="space-16px"></div>
+										<div class="width-30-pp float-left inline-block">
+											<img class="table-alignMiddle width-60px height-60px pad16px" src="images/icons/ic_checkmark.png" />
+											<span class="fs-normal hover blueColor" id="wb_manage_posts">Manage posts</span> 
+										</div>
+										<div class="width-30-pp float-left inline-block">
+											<img class="table-alignMiddle width-60px height-60px pad16px" src="images/icons/ic_checkmark.png" />
+											<span class="fs-normal hover blueColor" id="wb_photo_gallery">Photo gallery</span> 
+										</div>
+										
+									</div>
+									<div class="space-32px"></div>
+									<div class="space-32px"></div>
+									<div class="space-32px"></div>
+								</div>
+							</div>
+							<!-- Admin search result -->
+							<div class="viewContainer">
+								<div class="centerDivHorizontally width-80-pp pad16px">
+									<div class="space-32px"></div>
+									<div class="space-32px"></div>
+									<h1 class="centerText fs-medium">SEARCH RESULTS</h1>
+									<div class="space-32px"></div>
+									<table class="width-100-pp">
+										<tr>
+											<td class="width-80-pp">
+												<input class="width-100-pp pad16px fs-medium" type="text" placeholder="Search for members" id="searchResMembersInput">
+											</td>
+											<td>
+												<button class="width-100-pp height-60px hover" id="searchResMembersBtn">Search</button>
+											</td>
+										</tr>
+									</table>
+
+									<div class="space-32px"></div>
+
+									<div class="centerText" id="noResMembersContainer">
+										<div class="space-32px"></div>
+										<div class="space-32px"></div>
+										<p class="fs-normal">No match found</p>
+									</div>
+
+									<div class="width-100-pp" id="searchResMembersContainer">
+										<!--
+										<table class="width-100-pp pad16px hover gray-background-onhover">
+											<tr>
+												<td class="width-30px">
+													<img class="width-60px height-60px curDiv-30px mr-16px hover" id="userImage" src="images/icons/ic_avatar.PNG"/>
+												</td>
+												<td>
+													<div class="table-alignMiddle">
+														<div class="fs-normal bold">
+															Analikwu Anthony Rex
+														</div>
+														<div class="greenColor">
+															Verified
+														</div>
+													</div>
+												</td>
+											</tr>
+										</table>
+
+										<table class="width-100-pp pad16px hover gray-background-onhover">
+											<tr>
+												<td class="width-30px">
+													<img class="width-60px height-60px curDiv-30px mr-16px hover" id="userImage" src="images/icons/ic_avatar.PNG"/>
+												</td>
+												<td>
+													<div class="table-alignMiddle">
+														<div class="fs-normal bold">
+															Courage Osagie Aaron
+														</div>
+														<div class="redColor">
+															Unverified
+														</div>
+													</div>
+												</td>
+											</tr>
+										</table>
+										-->
+									</div>
+
+
+								</div>
+							</div>
+							<!-- view user profile -->
+							<div class="viewContainer">
+								<div class="centerDivHorizontally width-80-pp pad16px">
+									<h1 class="fs-large">Member Profile</h1>
+									<table class="width-100-pp mt-32px">
+										<tr>
+											<td class="width-90px">
+												<img class="width-120px height-120px curDiv-60px mr-16px" id="memberImage" src="images/icons/ic_avatar.PNG"/>
+											</td>
+											<td>
+												<p class="redColor" id="memberVerifyStatus">Unverified</p>
+											</td>
+										</tr>
+									</table>
+									<div class="space-32px"></div>
+									<table class="width-100-pp mt-32px">
+										<tr>
+											<td class="width-10-pp">
+												<label class="bold">Title</label>
+												<div class="mt-8px height-30px" id="memberTitle">
+													Mr
+												</div>
+											</td>
+											<td class="width-30px"></td>
+											<td>
+												<label class="bold">First name</label>
+												<div class="mt-8px height-30px" id="memberFirstName">
+													Rex
+												</div>
+											</td>
+											<td class="width-30px"></td>
+											<td>
+												<label class="bold">Last name</label>
+												<div class="mt-8px height-30px" id="memberLastName">
+													Anthony
+												</div>
+											</td>
+										</tr>
+									</table>
+									<div class="width-100-pp mt-16px">
+										<label class="bold" >Phone number</label>
+										<div class="mt-8px height-30px" id="memberPhoneNumber">
+											000000
+										</div>
+									</div>
+									<div class="width-100-pp mt-16px">
+										<label class="bold">Address</label>
+										<div class="mt-8px height-30px" id="memberAddress">
+											Block 4 flat 33 Escobar Louisina USA
+										</div>
+									</div>
+									<div class="width-100-pp mt-16px">
+										<label class="bold">Country</label>
+										<div class="mt-8px height-30px" id="memberCountry">
+											USA
+										</div>
+									</div>
+									<div class="width-100-pp mt-16px">
+										<label class="bold">State</label>
+										<div class="mt-8px height-30px" id="memberState">
+											
+										</div>
+									</div>
+									
+									<div class="width-100-pp mt-16px">
+										<label class="bold">Local Government</label>
+										<div class="mt-8px height-30px" id="memberLocalgov">
+											Brickstone
+										</div>
+									</div>
+									<div class="width-100-pp mt-16px">
+										<label class="bold">Occupation</label>
+										<div class="mt-8px height-30px" id="memberOccupation">
+											Capentar
+										</div>
+									</div>
+									<div class="width-100-pp mt-16px">
+										<label class="bold">Religion</label>
+										<div class="mt-8px height-30px" id="memberReligion">
+											Christianity
+										</div>
+									</div>
+					        		<table class="width-100-pp mt-32px mb-32px">
+					        			<tr>
+					        				<td class="width-100px">
+					        					<button class="width-100-pp pad16px div-radii-8px buttonNormal no-border" id="cancelMemberProfileBtn">CANCEL</button>
+					        				</td>
+					        				<td class="width-30px"></td>
+					        				<td class="width-100px">
+					        					<button class="width-100-pp pad16px div-radii-8px buttonPrimary no-border" id="verifyMemberBtn">VERIFY MEMBER</button>
+					        				</td>
+					        				<td class="width-30px"></td>
+					        				<td class="width-100px">
+					        					<button class="width-100-pp pad16px div-radii-8px buttonDanger no-border" id="deleteMemberBtn">DELETE MEMBER</button>
+					        				</td>
+					        			</tr>
+					        		</table>
+					        		<div class="space-32px"></div>
+						        	<div class="space-32px"></div>
+						        	<div class="space-32px"></div>
+								</div>
+							</div>
+							<!-- Edit page -->
+							<div class="viewContainer">
+								<div class="centerDivHorizontally width-90-pp pad16px">
+									<h1 class="fs-large">Edit page</h1>
+									
+									<div class="width-50-pp height-350px mt-16px float-left inline-block pr-8px">
+										<div class="width-100-pp height-350px">
+											<div>
+												<input class="pad16px width-100-pp no-border fs-large bold" id="pageTitle" type="text" placeholder="Title"/>
+											</div>
+											<div>
+												<textarea class="pad16px width-100-pp height-450px no-border fs-medium no-resize lh-large" id="postContent" spellcheck="false" placeholder="What is on your mind?"></textarea>
+											</div>
+										</div>
+									</div>
+
+									<div class="width-50-pp mt-16px inline-block">
+										<div class="width-100-pp pl-16px pr-16px">
+											<h1 class="fs-large" id="pageTitlePreview">This is the title</h1>
+											<p class="fs-normal lh-large mt-32px height-450px overflow" id="postContentPreview">
+												The content of the page will be here
+											</p>
+										</div>
+									</div>
+
+									<table class="width-100-pp mt-32px mb-32px">
+					        			<tr>
+					        				<td class="width-200px">
+					        					<button class="width-100-pp pad16px div-radii-8px buttonNormal no-border" id="cancelPageBtn">CANCEL</button>
+					        				</td>
+					        				<td class="width-30px"></td>
+					        				<td class="width-200px">
+					        					<button class="width-100-pp pad16px div-radii-8px buttonPrimary no-border" id="savePageBtn">Save</button>
+					        				</td>
+					        			</tr>
+					        		</table>
+					        		<div class="space-32px"></div>
+						        	<div class="space-32px"></div>
+						        	<div class="space-32px"></div>
+								</div>
+							</div>
+
+							<!-- National Excos -->
+							<div class="viewContainer">
+								<div class="centerDivHorizontally width-80-pp pad16px">
+									<table class="width-100-pp">
+										<tr>
+											<td class="width-90-pp">
+												<h1 class="fs-large">Edit National Excos</h1>
+											</td>
+											<td>
+												<button class="width-100px pt-8px pb-8px pl-16px pr-16px fs-normal hover" id="addNationalExcosBtn">Add</button>
+											</td>
+										</tr>
+									</table>
+
+									<div id="noExcosContainer">
+										<div class="space-32px"></div>
+										<div class="space-32px"></div>
+										<div class="space-32px"></div>
+										<div class="space-32px"></div>
+										<div class="centerText fs-normal">
+											The national executives will be displayed here after they are added
+										</div>
+									</div>
+
+									<table class="width-100-pp mt-16px centerText table-space-vertical-normal border hidden" id="excosContainer">
+										<tr>
+											<td class="pr-16px pb-64px pl-16px">
+												<div class="width-100-pp height-200px mb-16px border embedd-image"></div>
+												<div class="fs-normal bold">John Doe</div>
+												<div class="fs-normal">State : Delta State</div>
+												<div class="fs-normal">(2020)</div>
+											</td>
+											<td class="pr-16px pb-64px pl-16px">
+												<div class="width-100-pp height-200px mb-16px border embedd-image"></div>
+												<div class="fs-normal bold">John Doe</div>
+												<div class="fs-normal">State : Delta State</div>
+												<div class="fs-normal">(2020)</div>
+											</td>
+											<td class="pr-16px pb-64px pl-16px">
+												<div class="width-100-pp height-200px mb-16px border embedd-image"></div>
+												<div class="fs-normal bold">John Doe</div>
+												<div class="fs-normal">State : Delta State</div>
+												<div class="fs-normal">(2020)</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="pr-16px pb-64px pl-16px">
+												<div class="width-100-pp height-200px mb-16px border embedd-image"></div>
+												<div class="fs-normal bold">John Doe</div>
+												<div class="fs-normal">State : Delta State</div>
+												<div class="fs-normal">(2020)</div>
+											</td>
+											<td class="pr-16px pb-64px pl-16px">
+												<div class="width-100-pp height-200px mb-16px border embedd-image"></div>
+												<div class="fs-normal bold">John Doe</div>
+												<div class="fs-normal">State : Delta State</div>
+												<div class="fs-normal">(2020)</div>
+											</td>
+											<td class="pr-16px pb-64px pl-16px">
+												<div class="width-100-pp height-200px mb-16px border embedd-image"></div>
+												<div class="fs-normal bold">John Doe</div>
+												<div class="fs-normal">State : Delta State</div>
+												<div class="fs-normal">(2020)</div>
+											</td>
+										</tr>
+										
+									</table>
+								</div>
+							</div>
 						</div>
 					</div>
 					<span id="loadingContainer">Please wait...</span>
