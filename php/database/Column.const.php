@@ -32,6 +32,7 @@
 		const CONTENT = "content";
 
 		//national_excos_tb
+		const IS_DELETABLE = "isDeletable";
 		const NAME = "name";
 		//const TITLE = "title";
 		//const IMAGELINK = "imageLink";

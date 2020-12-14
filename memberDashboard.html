@@ -894,8 +894,8 @@
 											<td class="width-90-pp">
 												<h1 class="fs-large">Edit National Excos</h1>
 											</td>
-											<td>
-												<button class="width-100px pt-8px pb-8px pl-16px pr-16px fs-normal hover" id="addNationalExcosBtn">Add</button>
+											<td class="border">
+												<button class="width-100px pt-8px pb-8px pl-16px pr-16px fs-normal hover float-right" id="addNationalExcosBtn">Add</button>
 											</td>
 										</tr>
 									</table>
@@ -910,51 +910,77 @@
 										</div>
 									</div>
 
-									<table class="width-100-pp mt-16px centerText table-space-vertical-normal border hidden" id="excosContainer">
-										<tr>
-											<td class="pr-16px pb-64px pl-16px">
-												<div class="width-100-pp height-200px mb-16px border embedd-image"></div>
-												<div class="fs-normal bold">John Doe</div>
-												<div class="fs-normal">State : Delta State</div>
-												<div class="fs-normal">(2020)</div>
-											</td>
-											<td class="pr-16px pb-64px pl-16px">
-												<div class="width-100-pp height-200px mb-16px border embedd-image"></div>
-												<div class="fs-normal bold">John Doe</div>
-												<div class="fs-normal">State : Delta State</div>
-												<div class="fs-normal">(2020)</div>
-											</td>
-											<td class="pr-16px pb-64px pl-16px">
-												<div class="width-100-pp height-200px mb-16px border embedd-image"></div>
-												<div class="fs-normal bold">John Doe</div>
-												<div class="fs-normal">State : Delta State</div>
-												<div class="fs-normal">(2020)</div>
-											</td>
-										</tr>
-										<tr>
-											<td class="pr-16px pb-64px pl-16px">
-												<div class="width-100-pp height-200px mb-16px border embedd-image"></div>
-												<div class="fs-normal bold">John Doe</div>
-												<div class="fs-normal">State : Delta State</div>
-												<div class="fs-normal">(2020)</div>
-											</td>
-											<td class="pr-16px pb-64px pl-16px">
-												<div class="width-100-pp height-200px mb-16px border embedd-image"></div>
-												<div class="fs-normal bold">John Doe</div>
-												<div class="fs-normal">State : Delta State</div>
-												<div class="fs-normal">(2020)</div>
-											</td>
-											<td class="pr-16px pb-64px pl-16px">
-												<div class="width-100-pp height-200px mb-16px border embedd-image"></div>
-												<div class="fs-normal bold">John Doe</div>
-												<div class="fs-normal">State : Delta State</div>
-												<div class="fs-normal">(2020)</div>
-											</td>
-										</tr>
-										
-									</table>
+									<div class="grid-3 width-100-pp centerText mt-32px" id="excosContainer">
+										<div class="border pad8px">
+											<div class="width-100pp height-200px mb-16px border"></div>
+											<div class="fs-normal bold">John Doe</div>
+											<div class="fs-normal mb-16px">Chairman</div>
+											<button class="width-100-pp hover">Edit</button>
+										</div>
+										<div class="border pad8px">
+											<div class="width-100pp height-200px mb-16px border"></div>
+											<div class="fs-normal bold">John Doe</div>
+											<div class="fs-normal mb-16px">Chairman</div>
+											<div class="grid-2 grid-column-gap-5px">
+												<div>
+													<button class="width-100-pp hover">Edit</button>
+												</div>
+												<div>
+													<button class="width-100-pp hover">Delete</button>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
+
+							<!-- Add National Exco -->
+							<div class="viewContainer">
+								<div class="centerDivHorizontally width-80-pp">
+									<h1 class="fs-large mt-16px">Add National Executive</h1>
+									<div class="centerDivHorizontally width-60-pp pad16px">
+										<div class="space-32px"></div>
+										<div class="space-32px"></div>
+										<div class="centerText">
+											<img class="width-200px height-200px curDiv-100px hover" id="addExcoImage" src="images/icons/ic_avatar.PNG"/>
+
+											<form class="hidden" id="addExcoUploadForm" method="POST" enctype="multipart/form-data">
+												<input type="file" name="image" id="addExcoUploadFile" accept="image/jpg, image/jpeg, image/png"/>
+											</form>
+										</div>
+
+										<div class="space-32px"></div>
+										<div class="space-32px"></div>
+
+										<div>
+											<input class="pad16px fs-medium width-100-pp" id="addExcoName" type="text" placeholder="Full name"/>
+										</div>
+
+										<div class="space-16px"></div>
+
+										<div>
+											<input class="pad16px fs-medium width-100-pp" id="addExcoPosition" type="text" placeholder="Financial Secretary"/>
+										</div>
+
+										<table class="width-100-pp mt-32px">
+						        			<tr>
+						        				<td class="width-200px">
+						        					<button class="width-100-pp pad16px div-radii-8px buttonNormal no-border" id="cancelAddExcoBtn">CANCEL</button>
+						        				</td>
+						        				<td class="width-30px"></td>
+						        				<td class="width-200px">
+						        					<button class="width-100-pp pad16px div-radii-8px buttonPrimary no-border" id="saveExcoBtn">Save</button>
+						        				</td>
+						        			</tr>
+						        		</table>
+
+						        		<div class="space-32px"></div>
+										<div class="space-32px"></div>
+						        	</div>
+								</div>
+							</div>
+
+							
 						</div>
 					</div>
 					<span id="loadingContainer">Please wait...</span>

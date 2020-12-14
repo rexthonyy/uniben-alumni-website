@@ -40,10 +40,10 @@ async function sendPostRequest(url, data){
 	return json;
 }
 
-async function sendFormDataRequest(url, form){
+async function sendFormDataRequest(url, formData){
 	let response = await fetch(url, {
 		method: 'post',
-		body: new FormData(form)
+		body: formData
 	});
 
 	let json = await response.json();

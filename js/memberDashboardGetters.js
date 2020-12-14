@@ -290,3 +290,31 @@ function getAddNationalExcosBtn(){
 	return document.getElementById("addNationalExcosBtn");
 }
 
+function getCancelAddExcoBtn(){
+	return document.getElementById("cancelAddExcoBtn");
+}
+
+function getSaveExcoBtn(){
+	return document.getElementById("saveExcoBtn");
+}
+
+function getAddExcoUploadForm(){
+	return document.getElementById("addExcoUploadForm");
+}
+
+function getAddExcoUploadFile(){
+	return document.getElementById("addExcoUploadFile");
+}
+
+function getAddExcoImage(){
+	return document.getElementById("addExcoImage");
+}
+
+function getAddExcoNameInput(){
+	return document.getElementById("addExcoName");
+}
+
+function getAddExcoPositionInput(){
+	return document.getElementById("addExcoPosition");
+}
+

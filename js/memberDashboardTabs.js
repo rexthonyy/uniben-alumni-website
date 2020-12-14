@@ -302,7 +302,8 @@ class AdminTab extends Tab {
 			new SearchMembersView(this, 1),
 			new MemberProfileView(this, 2),
 			new EditPageView(this, 3),
-			new NationalExcosView(this, 4)
+			new NationalExcosView(this, 4),
+			new AddNationalExcoView(this, 5)
 		];
 	}
 

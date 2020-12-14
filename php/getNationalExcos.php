@@ -20,7 +20,7 @@
 			$response['viewIndex'] = $_POST['viewIndex'];
 		}
 
-		$properties['columns'] = Column::ID.",".Column::NAME.",".Column::TITLE.",".Column::IMAGELINK;
+		$properties['columns'] = Column::ID.",".Column::IS_DELETABLE.",".Column::NAME.",".Column::TITLE.",".Column::IMAGELINK;
 		$properties['condition'] = "";
 		$properties['orderBy'] = "";
 		$properties['limit'] = "";

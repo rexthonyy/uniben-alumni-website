@@ -399,6 +399,7 @@ class EditPageView extends Views {
 class NationalExcosView extends Views {
 	constructor(tab, viewIndex){
 		super(tab, viewIndex, new NationalExcosViewDisplay(viewIndex));
+		this.excosList = new Array();
 	}
 
 	getRouteUrl(){
@@ -415,10 +416,65 @@ class NationalExcosView extends Views {
 	}
 
 	loadData(data){
-		console.log(data);
 		if(data.status == 'success'){
+			this.excosList = data;
+
+			let html = '';
+
+			data.excos.forEach(exco => {
+
+				let excoId = exco.id;
+				let isDeletable = exco.isDeletable == 'y';
+				let name = exco.name;
+				let title = exco.title;
+				let imageLink = exco.imageLink;
+
+				let buttonHTML = '';
+
+				if(isDeletable){
+					buttonHTML = `
+						<div class="grid-2 grid-column-gap-5px">
+							<div>
+								<button class="width-100-pp hover" id="editExcoBtn${excoId}">Edit</button>
+							</div>
+							<div>
+								<button class="width-100-pp hover" id="deleteExcoBtn${excoId}">Delete</button>
+							</div>
+						</div>
+					`;
+				}else{
+					buttonHTML = `
+						<button class="width-100-pp hover" id="editExcoBtn${excoId}">Edit</button>
+					`;
+				}
+
+				html += `
+					<div class="pad8px">
+						<div class="width-100pp height-200px mb-16px" id="excoImage${excoId}"></div>
+						<div class="fs-normal bold">${name}</div>
+						<div class="fs-normal mb-16px">${title}</div>
+						${buttonHTML}
+					</div>
+				`;
+			});
+
+			getExcosContainer().innerHTML = html;
+
 			getNoExcosContainer().style.display = 'none';
-			getExcosContainer().style.display = 'block';
+			getExcosContainer().style.display = 'grid';
+
+			data.excos.forEach(exco => {
+				let excoId = exco.id;
+				let imageLink = exco.imageLink == '' ? 'images/icons/ic_avatar.PNG' : exco.imageLink;
+
+
+				let excoImage = document.getElementById(`excoImage${excoId}`);
+
+				excoImage.style.backgroundImage = `url("${imageLink}")`;
+				excoImage.style.backgroundPosition = 'center center';
+				excoImage.style.backgroundSize = 'cover';
+			});
+
 		}else{
 			getNoExcosContainer().style.display = 'block';
 			getExcosContainer().style.display = 'none';
@@ -427,12 +483,83 @@ class NationalExcosView extends Views {
 
 	setClickListener(){
 		getAddNationalExcosBtn().onclick = () => {
-			console.log("add excos");
+			this.tab.views[this.viewIndex].close();
+			this.tab.views[5].click();
+			this.tab.activeView = 5;
 		};
+
+		this.excosList.forEach(exco =>{
+			document.getElementById(`editExcoBtn${excoId}`).onclick = () => {
+
+			};
+		});
 	}
 
 	clearData(){
 		
+	}
+}
+
+class AddNationalExcoView extends Views {
+	constructor(tab, viewIndex){
+		super(tab, viewIndex, new ViewsDisplay(viewIndex));
+	}
+
+	click(){
+		this.setup();
+		this.display.setup();
+	}
+
+	setup(){
+		this.setClickListener();
+	}
+
+	setClickListener(){
+
+		getAddExcoImage().onclick = () => {
+			getAddExcoUploadFile().addEventListener("change", (event) => {
+				getAddExcoImage().src = URL.createObjectURL(event.target.files[0]);
+				getAddExcoImage().onload = () => URL.revokeObjectURL(getAddExcoImage().src);
+			});
+
+			getAddExcoUploadFile().click();
+		};
+
+		getCancelAddExcoBtn().onclick = () => {
+			this.tab.views[this.viewIndex].close();
+			this.tab.views[4].click();
+			this.tab.activeView = 4;
+		};
+
+		getSaveExcoBtn().onclick = () => {
+			let excoName = getAddExcoNameInput().value;
+			let excoPosition = getAddExcoPositionInput().value;
+
+			if(!excoName || !excoPosition) return;
+
+			let form = new FormData();
+			let file = getAddExcoUploadFile().files[0];
+			form.append('file', file);
+			form.append('name', excoName);
+			form.append('position', excoPosition);
+
+			let url = 'php/addNationalExecutive.php';
+
+			this.tab.views[this.viewIndex].close();
+
+			sendFormDataRequest(url, form)
+			.then(json => {
+				alert("Executive added successfully");
+				this.tab.views[4].click();
+				this.tab.activeView = 4;
+			}).catch(err => {
+				console.error(err);
+			});
+		};
+	}
+
+	clearData(){
+		getAddExcoUploadForm().reset();
 	}
 }
 
