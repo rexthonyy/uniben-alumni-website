@@ -416,6 +416,7 @@ class NationalExcosView extends Views {
 	}
 
 	loadData(data){
+		console.log(data);
 		if(data.status == 'success'){
 			this.excosList = data;
 
